@@ -2,10 +2,7 @@
   grid-area: c;
   background-color: burlywood;
 }
-.content img{
-  max-height: 500px;
-}
 
-.item{
-  color:bisque
+.image img{
+  min-width: 600px;
 }
