@@ -12,9 +12,8 @@ const MyPosts = () => {
             <button>Add post</button>
           </div>
           <div className={classq.post}>
-            <Post/>
-            <Post/>
-            <Post/>
+            <Post message="Hi, how are you?"/>
+            <Post message ="Goodbo"/>
             <div className={classq.item}>
               Post 2
             </div>
