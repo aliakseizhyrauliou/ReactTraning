@@ -1,0 +1,9 @@
+.wrapper{
+    padding: 20px;
+}
+.addPost{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-bottom: 20px;
+}

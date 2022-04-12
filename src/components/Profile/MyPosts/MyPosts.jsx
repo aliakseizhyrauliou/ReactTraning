@@ -5,9 +5,9 @@ import Post from './Post/Post';
 
 const MyPosts = () => {
     return (
-        <div>
+        <div className={classq.wrapper}>
           My posts
-          <div>
+          <div className={classq.addPost}>
             <textarea></textarea>
             <button>Add post</button>
           </div>

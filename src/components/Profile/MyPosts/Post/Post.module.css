@@ -1,5 +1,7 @@
 .item{
-  color:bisque
+  color:bisque;
+  display: flex;
+  align-items: center;
 }
 
 .item img{
@@ -8,3 +10,6 @@
   border-radius: 30px;
 }
 
+.message{
+  margin-left: 10px;
+}
