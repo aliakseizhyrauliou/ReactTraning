@@ -1,0 +1,13 @@
+.container{
+  display: flex;
+}
+
+.main{
+  margin-top: 200px;
+}
+
+.friendsHeader{
+  color: white;
+  margin-bottom: 20px;
+  border-bottom: 1px solid white;
+}

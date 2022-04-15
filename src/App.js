@@ -10,17 +10,16 @@ import Profile from './components/Profile/Profile.jsx';
 import Settings from './components/Settings/Settings';
 
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
-        <Navbar />
-        {/* <Profile/> */}
+        <Navbar state={props.state.sidebar}/>
         <div className="app-wrapper-content">
           <Routes>
-            <Route element={<Dialogs/>} path="/dialogs"/>
-            <Route element={<Profile/>} path="/profile"/>
+            <Route element={<Dialogs state={props.state.messagesPage}/>} exact path="/dialogs"/>
+            <Route element={<Profile state={props.state.profilePage}/>} path="/profile"/>
             <Route element={<News/>} path="/news"/>
             <Route element={<Music/>} path="/music"/>
             <Route element={<Settings/>} path="/settings"/>
