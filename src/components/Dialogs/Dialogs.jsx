@@ -16,6 +16,16 @@ const Dialogs = (props) => {
         return <Message message={data.message}/>
     });
 
+    let link = React.createRef();
+
+    let click = () => {
+        props.addNewMessage();
+    }
+
+    let change = () => {
+        let value = link.current.value;
+        props.addNewMessageChar(value);
+    }
 
     
     return (
@@ -25,6 +35,10 @@ const Dialogs = (props) => {
             </div>
             <div className={styles.messages}>
                 {messageElements}
+                <textarea ref={link} value={props.newMessageText} onChange={change}></textarea>
+                <div>
+                    <button type="submit" className={styles.button} onClick={click}>Отправить</button>
+                </div>
             </div>
         </div>
     );
