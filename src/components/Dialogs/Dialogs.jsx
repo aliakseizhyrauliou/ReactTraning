@@ -19,12 +19,12 @@ const Dialogs = (props) => {
     let link = React.createRef();
 
     let click = () => {
-        props.addNewMessage();
+        props.dispatch({type: "ADD-NEW-MESSAGE"});
     }
 
     let change = () => {
         let value = link.current.value;
-        props.addNewMessageChar(value);
+        props.dispatch({type: "ADD-NEW-MESSAGE-CHAR", text: value});
     }
 
     

@@ -33,7 +33,7 @@ let store = {
     _callSubscriber(){
         console.log("State changed");
     },
-    addPost(){
+    _addPost(){
         let newPost = {
             id: 5,
             message : this._state.profilePage.newPostText,
@@ -43,11 +43,11 @@ let store = {
         this._state.profilePage.newPostText = "";
         this._callSubscriber(this._state);
     },
-    newCharPostText(text){
+    _newCharPostText(text){
         this._state.profilePage.newPostText = text;
         this._callSubscriber(this._state);
     },
-    addNewMessage(){
+    _addNewMessage(){
         let newMessage = {
             id: 4,
             message: this._state.messagesPage.newMessageText
@@ -56,13 +56,27 @@ let store = {
         this._state.messagesPage.newMessageText = "";
         this._callSubscriber(this._state);
     },
-    addNewMessageChar(text){
+    _addNewMessageChar(text){
         this._state.messagesPage.newMessageText = text;
         this._callSubscriber(this._state);
     },
     Subscribe(callback){
         this._callSubscriber = callback;
-    } 
+    },
+    dispatch(action){
+        if(action.type === "ADD-POST"){
+            this._addPost();
+        }
+        else if(action.type === "NEW-CHAR-POST-TEXT"){
+            this._newCharPostText(action.text);
+        }
+        else if(action.type === "ADD-NEW-MESSAGE"){
+            this._addNewMessage();
+        }
+        else if(action.type === "ADD-NEW-MESSAGE-CHAR"){
+            this._addNewMessageChar(action.text);
+        }
+    }
 }
 
 export default store;

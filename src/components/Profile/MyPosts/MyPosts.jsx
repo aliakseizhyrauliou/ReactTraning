@@ -10,15 +10,13 @@ const MyPosts = (props) => {
   let link = React.createRef();
 
   let click = () =>{
-    
-    let value = link.current.value;
-    props.addPost(value);
+    props.dispatch({type: "ADD-POST"});
   }
 
   let change = () => 
   {
     let value = link.current.value;
-    props.newCharPostText(value);    
+    props.dispatch({type: "NEW-CHAR-POST-TEXT", text: value});
   }
 
   return (
